@@ -1,0 +1,125 @@
+<html>
+<head>
+<meta charset="utf-8">
+<<link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
+<script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
+<script src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+<script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+    <script src="/static/jquery-3.2.1.js"></script>
+
+</head>
+<body>
+<input id="shuzhi" type="text">
+<div id="fanhui" type="text"></div>
+
+
+
+
+
+<div>
+    <div class="ibox-content">
+
+
+
+
+{#                        <div id="minitor" style="height:400px"></div>#}
+{#                        <button type="button" id="open" onclick="switchOn()">开始</button>#}
+{#                        <button type="button" id="close" onclick="switchClose()">停止</button>#}
+{#                        <!-- ECharts单文件引入 -->#}
+{#                         <script src="/static/echarts.js"></script>#}
+{#                        <script src="/static/jquery-3.2.1.js"></script>#}
+{#                        <script type="text/javascript" >#}
+{#                            // 基于准备好的dom，初始化echarts图表#}
+{#                            var chartDom = document.getElementById('minitor');#}
+{#                            var myChart = echarts.init(chartDom);#}
+{#                            var option;#}
+{#                            var xmlhttp;#}
+{#                            var time = [];#}
+{#                            var data = [];#}
+{#                            if (window.XMLHttpRequest)#}
+{#                            {#}
+{#                                //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码#}
+{#                                xmlhttp=new XMLHttpRequest();#}
+{#                            }#}
+{#                            else#}
+{#                            {#}
+{#                                // IE6, IE5 浏览器执行代码#}
+{#                                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");#}
+{#                            }#}
+{#                            function switchClose() {#}
+{#                                clearInterval(window.setInte);#}
+{#                            }#}
+{##}
+{#                        for (var i = 0; i < 120; i++) {#}
+{#                          time.push("2");#}
+{#                          data.push("3");#}
+{#                        }#}
+{##}
+{#                        option = {#}
+{#                          title: {#}
+{#                            text: 'Dynamic Data & Time Axis'#}
+{#                          },#}
+{#                          tooltip: {},#}
+{#                          xAxis: {#}
+{#                            data:time#}
+{#                          },#}
+{#                          yAxis: {#}
+{##}
+{#                          },#}
+{#                          series: [#}
+{#                            {#}
+{#                              name: 'Fake Data',#}
+{#                              type: 'line',#}
+{#                              data: data#}
+{#                            }#}
+{#                          ]#}
+{#                        };#}
+{#                        function switchOn() {#}
+{#                            window.setInte=setInterval(function () {#}
+{#                                var shuzhi =  document.getElementById("shuzhi").value;#}
+{#                                var params = 'shuzhi='+ shuzhi;#}
+{#                                    xmlhttp.onreadystatechange=function()#}
+{#                                        {#}
+{#                                            if (xmlhttp.readyState==4 && xmlhttp.status==200)#}
+{#                                            {#}
+{#                                                var responseText = JSON.parse(xmlhttp.responseText);#}
+{#                                                console.log(responseText);#}
+{#                                                console.log(typeof responseText.a);#}
+{#                                                document.getElementById("fanhui").innerHTML=responseText.dj#}
+{#                                                time.shift();#}
+{#                                                time.push("3");#}
+{#                                                data.shift();#}
+{#                                                data.push("4")#}
+{##}
+{#                                            }#}
+{#                                        };#}
+{#                                    xmlhttp.open("get","/ihsd/dataChange?"+params,true);#}
+{#                                    xmlhttp.send();#}
+{##}
+{##}
+{#                                  myChart.setOption({#}
+{#                                    xAxis: {#}
+{#                                        data: time#}
+{#                                    },#}
+{#                                    series: [#}
+{#                                      {#}
+{#                                        data: data#}
+{#                                      }#}
+{#                                    ]#}
+{#                                  });#}
+{#                                }, 1000);#}
+{#                            }#}
+{##}
+{##}
+{##}
+{#                            option && myChart.setOption(option);#}
+{##}
+{##}
+{#                        </script>#}
+                    </div>
+</div>
+
+
+
+</body>
+</html>
